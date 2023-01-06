@@ -113,7 +113,31 @@ console.log(`Total: $${total}`);
  - Find the average (Total/Number of months) and use Number toFixed(2) to print to the nearest 100th 
  */
 
-console.log("Average  Change: $"); 
+    // calculate changes in Profit/Losses from month to month 
+var changes = [];
+
+var profitChange = 0;
+var previousMonth = 0;
+var currentMonth = 0;
+
+for (var i = 0; i < finances.length; i++) {
+    currentMonth = finances[i][1];
+    profitChange = currentMonth - previousMonth;
+    previousMonth = currentMonth;
+    changes.push(profitChange);
+}
+
+    // calculate total profit changes 
+var totalChange = 0;
+for (i in changes) {
+    totalChange = totalChange + changes[i];
+}
+
+    // calculate average
+var average = totalChange/totalMonths;
+average = average.toFixed(2);
+console.log(`Average  Change: ${average}`); 
+
 
 // The greatest increase in profits (date and amount) over the entire period.
 console.log("Greatest Increase in Profits: ");
