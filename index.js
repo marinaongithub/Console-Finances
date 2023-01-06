@@ -1,3 +1,5 @@
+// Dataset
+
 var finances = [
 ['Jan-2010', 867884],
 ['Feb-2010', 984655],
@@ -86,3 +88,28 @@ var finances = [
 ['Jan-2017', 138230],
 ['Feb-2017', 671099]
 ];
+
+// Title 
+console.log("Financial Analysis");
+console.log("-----------------------");
+
+
+// Total number of months included in the dataset
+console.log("Total Months: ");
+
+// Net total amount of Profit/Losses over the entire period
+
+console.log("Total: $");
+
+/* The average of the changes in Profit/Losses over the entire period.
+ - Total change in profits is from month to month
+ - Find the average (Total/Number of months) and use Number toFixed(2) to print to the nearest 100th 
+ */
+
+console.log("Average  Change: $"); 
+
+// The greatest increase in profits (date and amount) over the entire period.
+console.log("Greatest Increase in Profits: ");
+
+// The greatest decrease in losses (date and amount) over the entire period
+console.log("Greatest Decrease in Profits: ");
