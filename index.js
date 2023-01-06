@@ -100,8 +100,13 @@ console.log(`Total Months: ${totalMonths}`);
 
 
 // Net total amount of Profit/Losses over the entire period
+var total = 0;
 
-console.log("Total: $");
+for (i in finances) {
+    total = total + finances[i][1];
+}
+
+console.log(`Total: $${total}`);
 
 /* The average of the changes in Profit/Losses over the entire period.
  - Total change in profits is from month to month
