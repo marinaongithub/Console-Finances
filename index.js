@@ -79,11 +79,11 @@ var finances = [
 ['Apr-2016', 757143],
 ['May-2016', 445709],
 ['Jun-2016', 712961],
-['Jul-2016', -1163797],
+['Jul-2016', -1163797], //-1 876 758
 ['Aug-2016', 569899],
 ['Sep-2016', 768450],
 ['Oct-2016', 102685],
-['Nov-2016', 795914],
+['Nov-2016', 795914], // 692 629
 ['Dec-2016', 60988],
 ['Jan-2017', 138230],
 ['Feb-2017', 671099]
@@ -120,12 +120,28 @@ var profitChange = 0;
 var previousMonth = 0;
 var currentMonth = 0;
 
+var bestProfit = 0;
+var worstProfit = 0;
+var bestMonth = "";
+var worstMonth = "";
+
 for (var i = 0; i < finances.length; i++) {
     currentMonth = finances[i][1];
+
     profitChange = currentMonth - previousMonth;
     previousMonth = currentMonth;
     changes.push(profitChange);
+
+    if (bestProfit < profitChange) {
+        bestProfit = profitChange;
+        bestMonth = `${finances[i][0]} ${bestProfit}`;
+    }
+    if (worstProfit > profitChange) {
+        worstProfit = profitChange;
+        worstMonth = `${finances[i][0]} ${worstProfit}`;
+    }
 }
+// console.log(changes);
 
     // calculate total profit changes 
 var totalChange = 0;
@@ -140,7 +156,8 @@ console.log(`Average  Change: ${average}`);
 
 
 // The greatest increase in profits (date and amount) over the entire period.
-console.log("Greatest Increase in Profits: ");
+
+console.log(`Greatest Increase in Profits: ${bestMonth}`);
 
 // The greatest decrease in losses (date and amount) over the entire period
-console.log("Greatest Decrease in Profits: ");
+console.log(`Greatest Decrease in Profits: ${worstMonth}`);
