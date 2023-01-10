@@ -102,7 +102,7 @@ console.log(`Total Months: ${totalMonths}`);
 // Net total amount of Profit/Losses over the entire period
 var total = 0;
 
-for (i in finances) {
+for (var i = 0; i < finances.length ; i++) {
     total = total + finances[i][1];
 }
 
